@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+subalakshmi.wixsite.com	TRUE	/subashanthosi	FALSE	1999999999	svSession	a0593a02127880a3d6f547d5b1cee63941eb191c876ead66f3635379bf32dc39628c106830562fb67a59542b4f6831531e60994d53964e647acf431e4f798bcdba99d16d566bb1e7c1e3263e2e1c891e59afb18b87e5f6896336ce0ae425120b
+subalakshmi.wixsite.com	TRUE	/	FALSE	1999999999	XSRF-TOKEN	1553245303|12M6TbXetGTI
+subalakshmi.wixsite.com	TRUE	/	FALSE	1999999999	requestId	1553245309.24145274352741330330
+subalakshmi.wixsite.com	TRUE	/	FALSE	1999999999	hs	1039650646
+
