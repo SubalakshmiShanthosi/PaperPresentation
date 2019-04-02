@@ -70,12 +70,19 @@
  of the hidden message }
 \end{itemize}
 \begin{itemize}
- \item{Aim - To develop a detection system which is capable of detecting the alteration in image both its format and signature thereby predicting the actual type of forged file 
- }
+ \item{Aim - To develop a detection system which is capable of detecting the alteration in image both its format and signature thereby predicting the actual type of forged file.}
 \end{itemize}
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Steganography explained.}
+\begin{figure}
+	\includegraphics[scale=0.40]{stegTech.png}
+	\caption{Steganographic Technique.}
+	
+\end{figure}
+\end{frame}
 \begin{frame}
 \frametitle{Challenges in Forged File Discovery}
  \begin{itemize}
@@ -100,8 +107,7 @@
 \begin{itemize}
 	\item{ A detailed literature review on a
 		variety of different methods, algorithms, and schemes in image steganography is conducted in order to analyse and
-		investigate them.
-	}
+		investigate them.}
    \item{Methods used:}
    \begin{itemize}
    	\item{Modified LSB(Least Significant Bit) Technique. }
@@ -113,6 +119,38 @@
    \item{Literature review demonstrating the popular steganographic techniques.}
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Image Steganography Review paper [1].}
+\begin{itemize}
+	\item{ Two broad categories.}
+	\begin{itemize}
+		\item Spatial domain Techniques.
+		\item Transform Domain Techniques.
+	\end{itemize}
+	\item{Methods used:}
+	\begin{itemize}
+		\item{Modified LSB(Least Significant Bit) Technique. }
+		\begin{itemize}
+			\item Two bits are embedded in blue layer and one bit is embedded in green layer.
+			\item Supports all image formats.
+		\end{itemize}
+		\item{Steganography approach based on LSB in digital image.}
+		\begin{itemize}
+			\item Permute the secret message.
+			\item Embed the permuted Stego-Key.
+			\item No provision to include encryption.
+		\end{itemize}
+		\item{IMStego-Java based Tool with reduced PSNR in conventional LSB approach. }
+		\begin{itemize}
+		 \item 1-LSB or 2-LSB on colour images.
+		 \item Restricted to PNG and BMP file formats. 	
+		 \item No encryption provision.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Digital Image Steganography Using Modified LSB and AES Cryptography[2].}
@@ -338,10 +376,10 @@
 \end{itemize}
 
 \begin{itemize}
-	\item{\textbf{Image Steganography Based on Modified LSB Substitution Method and Data Mapping[2]} ,   International Journal of Computer Science and Network Security(IJCSNS) , Pranab Kumar Dhar, Abdul Kaium and Tetsuya Shimamura , \href{http://paper.ijcsns.org/07_book/201803/20180321.pdf}{DOI} [ }
+	\item{\textbf{Image Steganography Based on Modified LSB Substitution Method and Data Mapping[2]} ,   International Journal of Computer Science and Network Security(IJCSNS) , Pranab Kumar Dhar, Abdul Kaium and Tetsuya Shimamura , \href{http://paper.ijcsns.org/07_book/201803/20180321.pdf}{DOI}  }
 	\end{itemize}
 \begin{itemize}
-	\item{\textbf{Boundary-based Image Forgery Detection by Fast Shallow CNN[3]} , 2018 24th International Conference on Pattern Recognition (ICPR) , Zhongping Zhang , Yixuan Zhang , Zheng Zhou , Jiebo Luo , \href{https://doi.org/10.1109/ICPR.2018.8545074} {DOI} [  }
+	\item{\textbf{Boundary-based Image Forgery Detection by Fast Shallow CNN[3]} , 2018 24th International Conference on Pattern Recognition (ICPR) , Zhongping Zhang , Yixuan Zhang , Zheng Zhou , Jiebo Luo , \href{https://doi.org/10.1109/ICPR.2018.8545074} {DOI}  }
 
 \end{itemize}
 
