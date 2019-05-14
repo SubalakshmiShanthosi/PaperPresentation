@@ -1,0 +1,456 @@
+\documentclass{beamer} % "Beamer" is a word used in Germany to mean video projector [  
+
+\usetheme{Berkeley} % Search online for beamer themes to find your favorite or use the Berkeley theme as in this file [ 
+
+
+
+\usepackage{color} % It may be necessary to set PCTeX or whatever program you are using to output a  [ pdf instead of a  [ dvi file in order to see color on your screen [ 
+\usepackage{graphicx} % This package is needed if you wish to include external image files [ 
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pifont}
+\usepackage{amsmath}
+
+\theoremstyle{definition} % See Lesson Three of the LaTeX Manual for more on this kind of "proclamation [ "
+\newtheorem*{dfn}{A Reasonable Definition}               
+
+\title{Image Steganography Analysis and Detection}
+\author{Subalakshmi Shanthosi S} 
+\institute{SSN College of Engineering}
+\date{}
+% Remove the % from the previous line and change the date if you want a particular date to be displayed; otherwise, today's date is displayed by default [ 
+
+\AtBeginSection[]  % The commands within the following {} will be executed at the start of each section [ 
+{
+\begin{frame} % Within each "frame" there will be one or more "slides [ "  
+\frametitle{Presentation Outline} % This is the title of the outline [ 
+\tableofcontents[currentsection]  % This will display the table of contents and highlight the current section [ 
+\end{frame}
+} % Do not include the preceding set of commands if you prefer not to have a recurring outline displayed during your presentation [ 
+
+\setbeamertemplate{sidebar right}{}
+\makeatother
+
+\setbeamertemplate{footline}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertsection
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertsubsection
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+			\usebeamerfont{date in head/foot}\date[short date]{14-05-2019}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+\makeatletter
+\setbeamertemplate{navigation symbols}{}
+\date[short date]{14-05-2019}
+
+\begin{document}
+
+\begin{frame} 
+\titlepage
+\end{frame}
+
+\section{What is Image Steganography?} % Since this is the start of a new section, our recurring outline will appear here 
+
+\begin{frame} 
+\frametitle{Image Steganography}
+ \begin{itemize}
+ \item{Steganography is the process of hiding a secret message within a
+ larger one in such a way that someone can not know the presence or contents
+ of the hidden message }
+\end{itemize}
+\begin{itemize}
+ \item{Aim - To develop a detection system which is capable of detecting the alteration in image both its format and signature thereby predicting the actual type of forged file 
+ }
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Challenges in Forged File Discovery}
+ \begin{itemize}
+	\item{Images without watermarking as digital signatures can be easily manipulated.}
+\end{itemize}
+\begin{itemize}
+	\item{With the advent of new photo editing software - hiding critical informations are easy and unpercievable }
+\end{itemize}
+\begin{itemize}
+	\item {Task to detect mix of scaled or compressed images as one is difficult}
+\end{itemize}
+\begin{itemize}
+	\item{Incorporating machine learning techniques for feature analysis and decision making  to classify the image to be forged or not  
+	}
+   \item{Tamper detection to check for change in the file format extension}
+\end{itemize}
+\end{frame}
+
+\section{Review Papers}
+\begin{frame}
+\frametitle{Image Steganography Based on Modified LSB Substitution Method and Data Mapping [1]}
+\begin{itemize}
+	\item{Steganographic method working on the principle of Modified LSB Technique with specific intend of reducing the number of 1's in the secret data  }
+	\item{Methods:Each pixel value of host image is changed if value of secret bit is 1 otherwise the LSB of each pixel value will remain unchanged }
+	\item{Limitation :}
+	   \begin{itemize}
+	   	\item {Less secure}
+	   	\item {Limited pixel quality}
+	   \end{itemize}
+    \item{State-of-the-art methods in terms of PSNR,SSIM  } 
+	\item{Future work:Better data mapping mechanism for reduced storage and computational performance  }
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{A Review on Deep Learning based Image Steganalysis [2]   }
+\begin{itemize}
+	\item{Steganalysis based on deep learning approach  }
+	\item{Classified as the following categories:}
+	\begin{itemize}
+		\item Spatial Image Steganalysis 
+		\item JPEG Domain  Steganalysis  
+	\end{itemize}
+\end{itemize}
+\begin{itemize}
+	 \item{Deep Learning based Steganalysis  }
+	\begin{itemize}
+		\item {Spatial Domain Steganography Steganalysis based on Deep Neural Network Design  }
+		\begin{itemize}
+			\item Spatial Rich model(SRM)  
+			\item Steganalysis Based on Fusion Approach 
+			\item Steganalysis methods based on Learning Strategy
+		\end{itemize}
+	    \item{ Jpeg Domain Steganography Steganalysis based on Deep
+	    	Learning  }
+    	\begin{itemize}
+    		\item Convolutional Neural Network(CNN) with 20 layers 
+    		\item CNN with 32 layers combined with  SCA-GFR 
+    		\item CNN with four 5 x 5 high pass filters, which
+    		include a “KV filter”, a “point filter”, and 2 Gabor filters, are
+    		used to detect stego noise introduced by JPEG-domain
+    		embedding scheme 
+    	\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Review on Deep Learning based Image Steganalysis [2]   }
+\begin{itemize}
+	\item{Limitation and Mitigation:}
+\end{itemize}
+	\begin{itemize}
+		\item {Acquisition and representation of statistical characteristics: Using  Generative Adversarial Network(GAN)  }
+		\item {Low payload steganographic image detection: Combination of neural neteork design and various other techniques like training sample creation and learning }
+		\item {Generalization of steganalysis: Combine Transfer Learning and Deep Learning}
+		\item {Quantitative and locating image steganalysis based on
+			deep learning }
+	\end{itemize}
+\begin{itemize}
+	\item{Future work: Challenges resolution by adapting new learning and training sample techniques  }
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganalysis based on Steganography Pattern Discovery[3] }
+\begin{itemize}
+	\item SPD Approach:
+	\begin{itemize}
+		\item Evolutionary method Steganalysis to extract the signature of stego images against clean images via fuzzy if–then rules  
+		
+		\item Blind steganalysis on the discovered knowledge, suitable trained models for steganalysis can be employed and stego images will be detected with high accuracy   
+		\item Using SPD, we can predict the type of steganography method from a stego image [  Employing SPD can enhance the approaches, which
+		assume that a special steganography method is used 
+		\item The effect of SPD before applying steganalysis methods has been investigated by some steganography and steganalysis techniques and it has been validated using some image databases  
+		\item The second stage is a compound deep CNN network in which the model parameters are learned in the training procedure 
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganalysis based on Steganography Pattern Discovery[3]  }
+\begin{itemize}
+	\item Steps carried out in SPD : 
+	\begin{itemize}
+		\item Image Feature Selection, Two Groups as methods: 
+		\begin{itemize}
+			\item Filtering :Select feature subsets independently from the learning classifiers and do not include learning 
+			\item Wrapping :Wrap around a certain learning algorithm that can
+			assess the selected feature subsets in terms of estimated classification errors and then build the final classifiers  
+		\end{itemize}
+		\item Fuzzy rule generation : Iterative Rule Learning approach, each individual codes one rule and in each iteration of Genetic Algorithm (GA) a new rule is adapted and added to the rule set, iteratively  
+	\end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The block diagram of Steganography pattern discovery [3]  }
+\begin{figure}
+\includegraphics[scale=0.37]{spdBlockDiag.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganalysis based on Steganography Pattern Discovery[3]}
+\begin{itemize}
+	\item Feature vector generation
+	\begin{itemize}
+	\item 274 dimension Steganalyser 
+	\item 324 dimension Feature Vector - First order and second order histograms.
+	\item Wavelet based Steganalysis 
+	\item 14 dimensional Feature Vector 
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganalysis based on Steganography Pattern Discovery[3]}
+\begin{itemize}
+	\item Fuzzy rule generation - Evolutionary method searches for a relatively smaller if-then-rules
+	\item Certinity Factor for Fuzzy Rules : 
+	\begin{itemize}
+	    \item Calculate the compatibility of each training sample
+	    \item For clean and stego images, calculate the relative sum of the compatibility grades of training samples with rule $R_j$ [ 
+	    \item The grade of certainty $CF_j$ for clean images [ 
+	\end{itemize}
+    \item Evolutionary Fuzzy Algorithm 
+    \begin{itemize}
+    	\item Initiation.
+    	\item Generation. 
+    	\item Replacement. 
+    	\item Inner Cycle Termination Test. 
+    	\item Outer Cycle Termination Test. 
+    	\item Weight Adjustement. 
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganalysis based on Steganography Pattern Discovery[3] }
+\begin{itemize}
+		\item Evolutionary Method : 
+		\begin{itemize}
+			\item Extracts signature of stego images against clean images using Fuzzy if-then-rules statements 
+			\item The Steganalyzer trained to detect only one steganography method at once 
+		\end{itemize}
+	    \item Limitations : 
+	    \begin{itemize}
+	    	\item Using Fuzzy rules increases computational complexicity  
+	    	\item Only 4 Class Feature Classification - Limited Features  
+	    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4]  }
+\begin{itemize}
+	\item A novel Steganography without Embedding (SWE), which does not need to modify the data of the carrier image, appeared to overcome the detection of machine-learning-based steganalysis algorithms 
+	\item SWE method based on deep convolutional generative adversarial networks.
+	\begin{itemize}
+		\item Generative Adversarial Network (GAN)
+		\begin{itemize}
+		    \item  GAN and discriminative model [ 
+		    \item The henerative model deceives the discriminative model via generated images that appear like real images while the discriminative
+		    model judges whether the images are real or unreal. 
+		\end{itemize}
+		\item Deep Convolutional Generatice Adversarial Network (DGAN)
+		\begin{itemize}
+		    \item Deep convolutional generative adversarial networks (DCGANs) are an extension of GANs in which the models are deep convolutional
+		    networks 
+		    \item Currently, GANs are widely used for the following works: 
+		    \item Image generation 
+		    \item Image restoration
+		    \item Image steganography(seldomly), especially SWE  
+		\end{itemize}
+			\end{itemize}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4] }
+\begin{figure}
+\includegraphics[scale=0.5]{DCGANSWE.png}
+\caption{Steganography Framework using DCGAN and SWE.}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4]}
+\begin{itemize}
+	\item The Proposed Image Steganography without embedding: 
+	\begin{itemize}
+		\item Train DCGANs on an image set and obtain generator G after DCGANs convergence.
+		\item Train a CNN's model, called the extractor E, based on the recovery errors from a large number of random noise vectors. 
+		\item The sender and the receiver hold the network and
+		parameters of G and E, respectively. 
+	\end{itemize}
+   \item Cover Image Generation 
+   \begin{itemize}
+       \item Secret message is segmented $S_i$ and then map each segment $S_i$
+       to noise vector $z_i$ .
+       \item Generate a cover image stegoi from the noise vector $z_i$ with the help of DCGANs
+   \end{itemize}
+ \item Training of the Extractor
+  \begin{itemize}
+  	\item We design the CNNs, called the extractor E, to recover the
+  	secret data from stego images generated by G .  
+  	\item Has four convolutional fully connected layer . 
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4]  }
+\begin{figure}
+	\includegraphics[scale=0.55]{extractorgan.png}
+	\caption{The structure of Extractor - E. }
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4] }
+\begin{itemize}
+    \item  leak-Relu activation function and batch normalization in each layer with no pooling layer or dropout operation   
+    \item Afully connected layer is used after last convolutional layer  
+    \item Train E to extract information from the generated stego images from G   \item The training procedure of the extractor is,
+\end{itemize}
+\begin{block}{Formula}
+	\begin{equation}
+	L(E) = \sum_{i=1}^{n} (z - E(stego)^2)
+	\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4]  }
+\begin{itemize}
+	\item  Secret Communication 
+	\begin{itemize}
+		\item Sender holds the CNNs model G and the corresponding network parameters of G and the receiver holds the CNNs model E and the corresponding network parameters of E 
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Steganography Algorithms Recognition based on Match Image and Deep Features Verification[5] }
+\begin{itemize}
+	\item Sub section of steganalysis.
+	\item Match image is generated by \textbf{Gaussian Filtering} on testing image to remove the possible stego signal.
+	\item CNN model is trained on test images to extract deep features from test and match images.
+	\item Proposed system also works better with unknown dataset.
+	\item Related work:
+	\begin{itemize}
+		\item Residual filters in steganalysis : Stego data to be placed in highly noise area to make it undistinguishable from noise component.
+		\item Convolutional Neural Network for steganalysis: Convolution followed by deep inner product to extract features.
+		Finding local features.
+	\end{itemize}
+	
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Steganography Algorithms Recognition based on Match Image and Deep Features Verification[5] }
+\begin{itemize}
+\item Motivation and Analysis of Cover Source Mismatch (CSM)
+\begin{itemize}
+	\item Difficult approach 
+	\item Stego signal S obeys Gauss distribution
+	\begin{equation}
+	S \sim N (0,\sigma^2)
+	\end{equation}
+	\item Variable-controlling approach is adopted.
+	\item Motivation :
+	\begin{itemize}
+		\item Match image should not contain stego signal.
+		\item Match and test image should be similar.
+	\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganography Algorithms Recognition based on Match Image and Deep Features Verification[5] }
+\begin{itemize}
+\item Obtaining	match image: 
+\begin{itemize}
+\item Obtained by reference.
+\item Gaussian filter is used on test image to remove stego signal.
+\item Two dimensional Gaussian distribution
+\begin{equation}
+G(x,y) = \frac{1}{2\pi\sigma^2} exp(-\frac{x^2+y^2}{2\sigma^2})
+\end{equation}
+\item Match image generation :
+\begin{equation}
+I\textsubscript{m}=conv2(I\textsubscript{t},K\textsubscript{G})
+\end{equation}
+\end{itemize}
+\item CNN-extracted deep features
+\item Using low dimensional representation of image.
+\item Modelled CNN for extracting features.
+\item Performance Analysis
+\item Feature Normalisation
+\item Weighted  similarity and Inner product similarity.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganography Algorithms Recognition based on Match Image and Deep Features Verification[5] }
+\begin{figure}
+\includegraphics[scale=0.47]{matchstegFramework.png}
+\caption{Framework of match steganalysis.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steganography Algorithms Recognition based on Match Image and Deep Features Verification[5] }
+\begin{itemize}
+\item Works even with unseen cover images.
+\item Computational processing higher than that of the conventional method.
+\item Future work:
+\begin{itemize}
+\item More practical Matching of images.
+\item More accurate similarity function.
+\item Reducing the computational complexcity.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\section{Reference Papers}
+
+\begin{itemize}
+	\item{\textbf{Digital Image Steganography Using Modified LSB and AES Cryptography[1]} ,   International Journal of Computer Science and Network Security(IJCSNS) ,Subhash Panwara , Shreenidhi Damanib , Mukesh Kumar \href{http://www.ijrerd.com/papers/v3-i6/3-IJRERD-C149.pdf}{DOI}.}
+	\end{itemize}
+
+\begin{itemize}
+	\item {\textbf{A Review on Deep Learning based Image Steganalysis [2]. } ,  2018 IEEE 3rd Advanced Information Technology, Electronic and Automation Control Conference (IAEAC) ,Yong-he TANG, Lie-hui JIANG, Hong-qi HE, Wei-yu DONG , \href{http://doi. org/10. 1109/IAEAC. 2018. 8577655} {DOI}. }
+\end{itemize}
+
+\begin{itemize}
+    \item {\textbf{Steganalysis based on steganography pattern discovery[3]} , Journal of Information Security and Applications , Hedieh Sajedi , \href{https://doi.org/10.1016/jjisa. 2016. 04. 001}{DOI. } }
+\end{itemize}
+
+\begin{itemize}
+	\item{\textbf{A Novel Image Steganography Method via Deep Convolutional Generative Adversarial Networks[4]. }, IEEE Access , Donghui Hu 1 , Liang Wang1 , Wenjie Jiang , Shuli Zheng ,  Bin Li , \href{https://doi.org/10.1109/ACCESS.2018.2852771}{DOI. }}
+\end{itemize}
+\newpage
+\begin{itemize}
+     \item {\textbf{Steganography Algorithms Recognition based on Match
+     Image and Deep Features Verification[5]. } , Multimedia Tools and Applications Journal ,Xu Xiaoyu ,Sun Yifeng Wu, Jiang , Sun Yi \href{https://doi.org/10.1007/s11042-018-6010-9}{DOI. }}
+  
+\end{itemize}
+\end{document}
+
